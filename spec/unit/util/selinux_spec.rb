@@ -36,7 +36,16 @@ describe Puppet::Util::SELinux do
     before :each do
       fh = stub 'fh', close: nil
       File.stubs(:open).with('/proc/mounts').returns fh
-      fh.expects(:read_nonblock).times(2).returns("rootfs / rootfs rw 0 0\n/dev/root / ext3 rw,relatime,errors=continue,user_xattr,acl,data=ordered 0 0\n/dev /dev tmpfs rw,relatime,mode=755 0 0\n/proc /proc proc rw,relatime 0 0\n/sys /sys sysfs rw,relatime 0 0\n192.168.1.1:/var/export /mnt/nfs nfs rw,relatime,vers=3,rsize=32768,wsize=32768,namlen=255,hard,nointr,proto=tcp,timeo=600,retrans=2,sec=sys,mountaddr=192.168.1.1,mountvers=3,mountproto=udp,addr=192.168.1.1 0 0\n").then.raises EOFError
+      fh.expects(:read_nonblock).times(2).returns(
+        <<-DOC
+          rootfs / rootfs rw 0 0
+          /dev/root / ext3 rw,relatime,errors=continue,user_xattr,acl,data=ordered 0 0
+          /dev /dev tmpfs rw,relatime,mode=755 0 0
+          /proc /proc proc rw,relatime 0 0
+          /sys /sys sysfs rw,relatime 0 0
+          192.168.1.1:/var/export /mnt/nfs nfs rw,relatime,vers=3,rsize=32768,wsize=32768,namlen=255,hard,nointr,proto=tcp,timeo=600,retrans=2,sec=sys,mountaddr=192.168.1.1,mountvers=3,mountproto=udp,addr=192.168.1.1 0 0
+        DOC
+      ).then.raises EOFError
     end
 
     it 'parses the contents of /proc/mounts' do
