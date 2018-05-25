@@ -1,6 +1,6 @@
 # Note: This unit test depends on having a sample SELinux policy file
-# in the same directory as this test called selmodule-example.pp
-# with version 1.5.0.  The provided selmodule-example.pp is the first
+# in the same directory as this test called selmodule-example
+# with version 1.5.0.  The provided selmodule-example is the first
 # 256 bytes taken from /usr/share/selinux/targeted/nagios.pp on Fedora 9
 
 require 'spec_helper'
@@ -37,7 +37,7 @@ describe provider_class do
 
   describe 'selmodversion_file' do
     it 'returns 1.5.0 for the example policy file' do
-      @provider.expects(:selmod_name_to_filename).returns "#{File.dirname(__FILE__)}/selmodule-example.pp"
+      @provider.expects(:selmod_name_to_filename).returns "#{File.dirname(__FILE__)}/selmodule-example"
       expect(@provider.selmodversion_file).to eq('1.5.0')
     end
   end
