@@ -5,10 +5,11 @@ require 'pathname'
 
 # A support module for testing files.
 module PuppetSpec::Files
+  @global_tempfiles = []
+
   def self.cleanup
-    $global_tempfiles ||= []
-    until $global_tempfiles.empty?
-      path = $global_tempfiles.pop
+    until @global_tempfiles.empty?
+      path = @global_tempfiles.pop
       begin
         Dir.unstub(:entries)
         FileUtils.rm_rf path, secure: true
@@ -109,8 +110,7 @@ module PuppetSpec::Files
 
   def self.record_tmp(tmp)
     # ...record it for cleanup,
-    $global_tempfiles ||= []
-    $global_tempfiles << tmp
+    @global_tempfiles << tmp
   end
 
   def expect_file_mode(file, mode)
