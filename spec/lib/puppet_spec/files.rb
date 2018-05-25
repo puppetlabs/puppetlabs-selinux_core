@@ -118,7 +118,7 @@ module PuppetSpec::Files
                     mode
                   else
                     '10' + '%04i' % mode.to_i
-    end
+                  end
     expect(actual_mode).to eq(target_mode)
   end
 end

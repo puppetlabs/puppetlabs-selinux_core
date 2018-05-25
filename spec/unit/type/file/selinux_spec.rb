@@ -34,7 +34,7 @@ require 'spec_helper'
                        when :selrole then 'role_r'
                        when :seltype then 'type_t'
                        when :selrange then 's0'
-      end
+                       end
       expect(@sel.retrieve).to eq(expectedresult)
     end
 
@@ -47,7 +47,7 @@ require 'spec_helper'
                        when :selrole then 'role_r'
                        when :seltype then 'type_t'
                        when :selrange then nil
-      end
+                       end
       expect(@sel.retrieve).to eq(expectedresult)
     end
 
@@ -64,7 +64,7 @@ require 'spec_helper'
                        when :selrole then 'role_r'
                        when :seltype then 'type_t'
                        when :selrange then 's0'
-      end
+                       end
       expect(@sel.default).to eq(expectedresult)
     end
 
