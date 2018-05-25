@@ -4,12 +4,12 @@ module Puppet
       are any of the ones found in `/selinux/booleans/`."
 
     newparam(:name) do
-      desc "The name of the SELinux boolean to be managed."
+      desc 'The name of the SELinux boolean to be managed.'
       isnamevar
     end
 
     newproperty(:value) do
-      desc "Whether the SELinux boolean should be enabled or disabled."
+      desc 'Whether the SELinux boolean should be enabled or disabled.'
       newvalue(:on)
       newvalue(:off)
     end
@@ -21,6 +21,5 @@ module Puppet
       defaultto :false
       newvalues(:true, :false)
     end
-
   end
 end
