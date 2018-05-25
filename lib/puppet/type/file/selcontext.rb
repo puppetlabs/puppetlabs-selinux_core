@@ -18,10 +18,10 @@
 # values while leaving the others alone.
 #
 # See https://www.nsa.gov/selinux/ for complete docs on SELinux.
-
 module Puppet
   require 'puppet/util/selinux'
 
+  # SELFileContext class
   class SELFileContext < Puppet::Property
     include Puppet::Util::SELinux
 

@@ -5,6 +5,7 @@ require 'puppet/util/selinux'
 include Puppet::Util::SELinux
 
 unless defined?(Selinux)
+  # Define the selinux module
   module Selinux
     def self.is_selinux_enabled
       false

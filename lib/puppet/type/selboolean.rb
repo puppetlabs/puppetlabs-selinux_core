@@ -1,3 +1,4 @@
+# SelBoolean type
 module Puppet
   Type.newtype(:selboolean) do
     @doc = "Manages SELinux booleans on systems with SELinux support.  The supported booleans
