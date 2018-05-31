@@ -2,9 +2,11 @@
   "name": "puppetlabs-selinux_core",
   "version": "0.1.0",
   "author": "Puppet Labs",
-  "summary": "",
+  "summary": "Manage SELinux context of files",
   "license": "Apache-2.0",
-  "source": "",
+  "source": "https://github.com/puppetlabs/puppetlabs-selinux_core",
+  "project_page": "https://github.com/puppetlabs/puppetlabs-selinux_core/blob/master/README.md",
+  "issues_url": "https://tickets.puppetlabs.com/projects/MODULES",
   "dependencies": [
 
   ],
