@@ -1,2 +1,7 @@
 spec/spec_helper.rb:
     mock_with: ':rspec'
+
+Gemfile:
+  required:
+    ':development':
+      - gem: puppet-strings

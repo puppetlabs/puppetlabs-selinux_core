@@ -25,6 +25,7 @@ module Puppet
   class SELFileContext < Puppet::Property
     include Puppet::Util::SELinux
 
+    # Retrieves the current SELinux context if the resource exists
     def retrieve
       return :absent unless @resource.stat
       context = get_selinux_current_context(@resource[:path])
@@ -36,6 +37,10 @@ module Puppet
       end
     end
 
+    # Retrieves the default SELinux context for the given property
+    #
+    # @param property
+    #   The SELinux property to retrieve the default context for
     def retrieve_default_context(property)
       if @resource[:selinux_ignore_defaults] == :true
         return nil
@@ -51,6 +56,10 @@ module Puppet
       property_default
     end
 
+    # Checks if a resource is set to what it should be
+    #
+    # @param value
+    #   The value of the resource to be checked
     def insync?(value)
       if !selinux_support?
         debug('SELinux bindings not found. Ignoring parameter.')
@@ -63,6 +72,10 @@ module Puppet
       end
     end
 
+    # I don't know
+    #
+    # @param should
+    #   Not quite sure
     def unsafe_munge(should)
       unless selinux_support?
         return should
@@ -75,6 +88,7 @@ module Puppet
       end
     end
 
+    # Set SELinux context on a resource
     def sync
       set_selinux_context(@resource[:path], @should, name)
       :file_changed
