@@ -5,45 +5,55 @@
 
 1. [Description](#description)
 2. [Setup - The basics of getting started with selinux_core](#setup)
-    * [What selinux_core affects](#what-selinux_core-affects)
     * [Setup requirements](#setup-requirements)
     * [Beginning with selinux_core](#beginning-with-selinux_core)
 3. [Usage - Configuration options and additional functionality](#usage)
-4. [Limitations - OS compatibility, etc.](#limitations)
-5. [Development - Guide for contributing to the module](#development)
+4. [Reference - User documentation](#reference)
+5. [Limitations - OS compatibility, etc.](#limitations)
+6. [Development - Guide for contributing to the module](#development)
 
 ## Description
 
-Briefly tell users why they might want to use your module. Explain what your module does and what kind of problems users can solve with it.
-
-This should be a fairly short description helps the user decide if your module is what they want.
-
+Manage SELinux context of files.
 
 ## Setup
 
-### What selinux_core affects **OPTIONAL**
+### Setup Requirements
 
-If it's obvious what your module touches, you can skip this section. For example, folks can probably figure out that your mysql_instance module affects their MySQL instances.
-
-If there's more that they should know about, though, this is the place to mention:
-
-* Files, packages, services, or operations that the module will alter, impact, or execute.
-* Dependencies that your module automatically installs.
-* Warnings or other important notices.
-
-### Setup Requirements **OPTIONAL**
-
-If your module requires anything extra before setting up (pluginsync enabled, another module, etc.), mention it here.
-
-If your most recent release breaks compatibility or requires particular steps for upgrading, you might want to include an additional "Upgrading" section here.
+In order to use the selinux module, you must have selinux ruby bindings available on the system.
 
 ### Beginning with selinux_core
 
-The very basic steps needed for a user to get the module up and running. This can include setup steps, if necessary, or it can be an example of the most basic use of the module.
+To set the SELinux context on a file:
+```
+file { "/path/to/file":
+  selinux_ignore_defaults => false,
+  selrange => 's0',
+  selrole => 'object_r',
+  seltype => 'krb5_home_t',
+  seluser => 'user_u',
+}
+```
+
+To manage a SELinux policy module:
+```
+selmodule { 'selmodule_policy':
+  ensure => present,
+  selmoduledir => '/usr/share/selinux/targeted',
+}
+```
+
+To manage SELinux booleans:
+```
+selboolean { 'collectd_tcp_network_connect':
+  persistent => true,
+  value => on,
+}
+```
 
 ## Usage
 
-Include usage examples for common use cases in the **Usage** section. Show your users how to use your module to solve problems, and be sure to include code examples. Include three to five examples of the most important or common tasks a user can accomplish with your module. Show users how to accomplish more complex tasks that involve different types, classes, and functions working in tandem.
+For details on usage, please see the puppet docs on [selmodule](https://puppet.com/docs/puppet/latest/types/selmodule.html), [selboolean](https://puppet.com/docs/puppet/latest/types/selboolean.html), and [the selinux section of the file type](https://puppet.com/docs/puppet/latest/types/file.html#file-attribute-selinux_ignore_defaults)
 
 ## Reference
 
@@ -62,7 +72,7 @@ This command will create a browsable `\_index.html` file in the `doc` directory.
 
 ## Limitations
 
-This module is only available on platforms that have selinux bindings available.
+This module is only available on platforms that have selinux ruby bindings available.
 
 ## Development
 
