@@ -22,7 +22,7 @@ Puppet::Type.type(:selmodule).provide(:semodule) do
     debug "Checking for module #{@resource[:name]}"
     execpipe("#{command(:semodule)} --list") do |out|
       out.each_line do |line|
-        if line =~ %r{#{@resource[:name]}\b}
+        if line =~ %r{^#{@resource[:name]}\b}
           return :true
         end
       end

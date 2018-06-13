@@ -27,6 +27,12 @@ describe Puppet::Type.type(:selmodule).provider(:semodule) do
       expect(provider.exists?).to be_nil
     end
 
+    it 'returns nil if module with same suffix is loaded' do
+      allow(provider).to receive(:command).with(:semodule).and_return '/usr/sbin/semodule'
+      allow(provider).to receive(:execpipe).with('/usr/sbin/semodule --list').and_yield StringIO.new("bar\t1.2.3\nmyfoo\t1.0.0\n")
+      expect(provider.exists?).to be_nil
+    end
+
     it 'returns nil if no modules are loaded' do
       allow(provider).to receive(:command).with(:semodule).and_return '/usr/sbin/semodule'
       allow(provider).to receive(:execpipe).with('/usr/sbin/semodule --list').and_yield StringIO.new('')
