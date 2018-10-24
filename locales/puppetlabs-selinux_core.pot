@@ -1,7 +1,7 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) 2018 Puppet, Inc.
 # This file is distributed under the same license as the puppetlabs-selinux_core package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2018....
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
 #
 #, fuzzy
 msgid ""
