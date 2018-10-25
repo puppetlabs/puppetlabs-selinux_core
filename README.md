@@ -24,7 +24,7 @@ In order to use the selinux module, you must have selinux ruby bindings availabl
 
 ### Beginning with selinux_core
 
-To set the SELinux context on a file:
+To set the SELinux context on a file, use the following code:
 ```
 file { "/path/to/file":
   selinux_ignore_defaults => false,
@@ -35,7 +35,7 @@ file { "/path/to/file":
 }
 ```
 
-To manage a SELinux policy module:
+To manage a SELinux policy module, use the following code:
 ```
 selmodule { 'selmodule_policy':
   ensure => present,
@@ -43,7 +43,7 @@ selmodule { 'selmodule_policy':
 }
 ```
 
-To manage SELinux booleans:
+To manage SELinux booleans, use the following code:
 ```
 selboolean { 'collectd_tcp_network_connect':
   persistent => true,
@@ -53,7 +53,7 @@ selboolean { 'collectd_tcp_network_connect':
 
 ## Usage
 
-For details on usage, please see the puppet docs on [selmodule](https://puppet.com/docs/puppet/latest/types/selmodule.html), [selboolean](https://puppet.com/docs/puppet/latest/types/selboolean.html), and [the selinux section of the file type](https://puppet.com/docs/puppet/latest/types/file.html#file-attribute-selinux_ignore_defaults)
+For details on usage, please see the puppet docs on [selmodule](https://puppet.com/docs/puppet/latest/types/selmodule.html), [selboolean](https://puppet.com/docs/puppet/latest/types/selboolean.html), and [the selinux section of the file type](https://puppet.com/docs/puppet/latest/types/file.html#file-attribute-selinux_ignore_defaults).
 
 ## Reference
 
@@ -63,7 +63,7 @@ This module is documented using Puppet Strings.
 
 For a quick primer on how Strings works, please see [this blog post](https://puppet.com/blog/using-puppet-strings-generate-great-documentation-puppet-modules) or the [README.md](https://github.com/puppetlabs/puppet-strings/blob/master/README.md) for Puppet Strings.
 
-To generate documentation locally, run
+To generate documentation locally, run the following code:
 ```
 bundle install
 bundle exec puppet strings generate ./lib/**/*.rb
@@ -80,4 +80,4 @@ Puppet Labs modules on the Puppet Forge are open projects, and community contrib
 
 We want to keep it as easy as possible to contribute changes so that our modules work in your environment. There are a few guidelines that we need contributors to follow so that we can have a chance of keeping on top of things.
 
-For more information, see our [module contribution guide.](https://docs.puppetlabs.com/forge/contributing.html)
+For more information, see our [module contribution guide](https://docs.puppetlabs.com/forge/contributing.html).
