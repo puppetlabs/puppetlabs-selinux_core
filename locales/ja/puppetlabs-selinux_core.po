@@ -1,0 +1,31 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2018 Puppet, Inc.
+# This file is distributed under the same license as the puppetlabs-selinux_core package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018....
+# 
+# Translators:
+# Erwin Hom <erwin.hom@puppet.com>, 2018
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: puppetlabs-selinux_core 1.0.0-3-g48548ee\n"
+"\n"
+"Report-Msgid-Bugs-To: docs@puppet.com\n"
+"POT-Creation-Date: 2018-08-17 14:57-0700\n"
+"PO-Revision-Date: 2018-10-24 00:39+0000\n"
+"Last-Translator: Erwin Hom <erwin.hom@puppet.com>, 2018\n"
+"Language-Team: Japanese (Japan) (https://www.transifex.com/puppet/teams/41915/ja_JP/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ja_JP\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: ../lib/puppet/provider/selmodule/semodule.rb:135
+msgid ""
+"Could not list policy modules: \"%{selmodule_command}\" failed with "
+"\"%{selmod_output}\""
+msgstr ""
+"ポリシーモジュールをリストできませんでした: "
+"\"%{selmodule_command}\"は\"%{selmod_output}\"により失敗しました。"
