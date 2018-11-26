@@ -6,7 +6,6 @@
 1. [Description](#description)
 2. [Setup - The basics of getting started with selinux_core](#setup)
     * [Setup requirements](#setup-requirements)
-    * [Beginning with selinux_core](#beginning-with-selinux_core)
 3. [Usage - Configuration options and additional functionality](#usage)
 4. [Reference - User documentation](#reference)
 5. [Limitations - OS compatibility, etc.](#limitations)
@@ -20,9 +19,9 @@ Manage SELinux context of files.
 
 ### Setup Requirements
 
-In order to use the selinux module, you must have selinux ruby bindings available on the system.
+In order to use the selinux module, you must have `selinux` ruby bindings available on the system.
 
-### Beginning with selinux_core
+## Usage
 
 To set the SELinux context on a file, use the following code:
 ```
@@ -51,13 +50,9 @@ selboolean { 'collectd_tcp_network_connect':
 }
 ```
 
-## Usage
-
-For details on usage, please see the puppet docs on [selmodule](https://puppet.com/docs/puppet/latest/types/selmodule.html), [selboolean](https://puppet.com/docs/puppet/latest/types/selboolean.html), and [the selinux section of the file type](https://puppet.com/docs/puppet/latest/types/file.html#file-attribute-selinux_ignore_defaults).
-
 ## Reference
 
-Please see REFERENCE.md for the reference documentation.
+Please see [`REFERENCE.md`](REFERENCE.md) for the reference documentation, and [the selinux section of the file type](https://puppet.com/docs/puppet/latest/types/file.html#file-attribute-selinux_ignore_defaults).
 
 This module is documented using Puppet Strings.
 
