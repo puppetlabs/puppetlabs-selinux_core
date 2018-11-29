@@ -11,16 +11,20 @@
 5. [Limitations - OS compatibility, etc.](#limitations)
 6. [Development - Guide for contributing to the module](#development)
 
+<a id="description"></a>
 ## Description
 
 Manage SELinux context of files.
 
+<a id="setup"></a>
 ## Setup
 
+<a id="setup-requirements"></a>
 ### Setup Requirements
 
 In order to use the selinux module, you must have `selinux` ruby bindings available on the system.
 
+<a id="usage"></a>
 ## Usage
 
 To set the SELinux context on a file, use the following code:
@@ -50,9 +54,10 @@ selboolean { 'collectd_tcp_network_connect':
 }
 ```
 
+<a id="reference"></a>
 ## Reference
 
-Please see [`REFERENCE.md`](REFERENCE.md) for the reference documentation, and [the selinux section of the file type](https://puppet.com/docs/puppet/latest/types/file.html#file-attribute-selinux_ignore_defaults).
+Please see REFERENCE.md for the reference documentation, and [the selinux section of the file type](https://puppet.com/docs/puppet/latest/types/file.html#file-attribute-selinux_ignore_defaults).
 
 This module is documented using Puppet Strings.
 
@@ -65,10 +70,12 @@ bundle exec puppet strings generate ./lib/**/*.rb
 ```
 This command will create a browsable `\_index.html` file in the `doc` directory. The references available here are all generated from YARD-style comments embedded in the code base. When any development happens on this module, the impacted documentation should also be updated.
 
+<a id="limitations"></a>
 ## Limitations
 
 This module is only available on platforms that have selinux ruby bindings available.
 
+<a id="development"></a>
 ## Development
 
 Puppet Labs modules on the Puppet Forge are open projects, and community contributions are essential for keeping them great. We can't access the huge number of platforms and myriad of hardware, software, and deployment configurations that Puppet is intended to serve.
