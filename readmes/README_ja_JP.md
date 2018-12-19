@@ -6,7 +6,6 @@
 1. [説明](#description)
 2. [セットアップ - selinux_coreモジュール導入の基本](#setup)
     * [セットアップ要件](#setup-requirements)
-    * [selinux_coreモジュールの利用方法](#beginning-with-selinux)
 3. [使用 - 設定オプションと追加機能](#usage)
 4. [リファレンス - ユーザマニュアル](#reference)
 5. [制約 - OS互換性など](#limitations)
@@ -23,10 +22,10 @@
 <a id="setup-requirements"></a>
 ### セットアップ要件
 
-selinuxモジュールを使用するためには、システム上でselinux rubyバインディングを使用できる状態になっている必要があります。
+selinuxモジュールを使用するためには、システム上で `selinux` rubyバインディングを使用できる状態になっている必要があります。
 
-<a id="beginning-with-selinux"></a>
-### selinux_coreモジュールの利用方法
+<a id="usage"></a>
+## 使用
 
 ファイルでSELinuxコンテキストを設定するには、以下のコードを使用します。
 ```
@@ -55,15 +54,10 @@ selboolean { 'collectd_tcp_network_connect':
 }
 ```
 
-<a id="usage"></a>
-## 使用
-
-利用方法の詳細については、[selmodule](https://puppet.com/docs/puppet/latest/types/selmodule.html)、[selboolean](https://puppet.com/docs/puppet/latest/types/selboolean.html)、[ファイルタイプのselinuxセクション](https://puppet.com/docs/puppet/latest/types/file.html#file-attribute-selinux_ignore_defaults)に関するPuppetドキュメントを参照してください。
-
 <a id="reference"></a>
 ## リファレンス
 
-リファレンス文書については、REFERENCE.mdを参照してください。
+REFERENCE.mdの参考文書と、[ファイルタイプのselinuxセクション](https://puppet.com/docs/puppet/latest/types/file.html#file-attribute-selinux_ignore_defaults)を参照してください。
 
 このモジュールは、Puppet Stringsを用いて文書化されています。
 
