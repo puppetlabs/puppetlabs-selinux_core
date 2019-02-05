@@ -1,7 +1,7 @@
 {
   "name": "puppetlabs-selinux_core",
   "version": "1.0.1",
-  "author": "Puppet Labs",
+  "author": "puppetlabs",
   "summary": "Manage SELinux context of files",
   "license": "Apache-2.0",
   "source": "https://github.com/puppetlabs/puppetlabs-selinux_core",
@@ -86,7 +86,7 @@
       "version_requirement": ">= 6.0.0 < 7.0.0"
     }
   ],
-  "pdk-version": "1.8.0",
+  "pdk-version": "1.9.0",
   "template-url": "https://github.com/puppetlabs/pdk-templates",
-  "template-ref": "heads/master-0-gd61c0a4"
+  "template-ref": "1.9.0-0-g7281db5"
 }
