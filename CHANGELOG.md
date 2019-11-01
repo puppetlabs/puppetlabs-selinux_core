@@ -2,17 +2,22 @@
 
 All notable changes to this project will be documented in this file. The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) and this project adheres to [Semantic Versioning](http://semver.org).
 
+## [1.0.3](https://github.com/puppetlabs/puppetlabs-selinux_core/tree/1.0.3) (2019-10-31)
+
+[Full Changelog](https://github.com/puppetlabs/puppetlabs-selinux_core/compare/1.0.2...1.0.3)
+
+### Added
+
+- pdksync - \(maint\) Update module using PDK 1.14.0 [\#19](https://github.com/puppetlabs/puppetlabs-selinux_core/pull/19) ([mihaibuzgau](https://github.com/mihaibuzgau))
+
 ## [1.0.2](https://github.com/puppetlabs/puppetlabs-selinux_core/tree/1.0.2) (2019-02-12)
 
 [Full Changelog](https://github.com/puppetlabs/puppetlabs-selinux_core/compare/1.0.1...1.0.2)
 
 ### Added
 
-- Expand test coverage [\#9](https://github.com/puppetlabs/puppetlabs-selinux_core/pull/9) ([joshcooper](https://github.com/joshcooper))
-
-### Fixed
-
 - \(L10n\) Updating translations for readmes/README\_ja\_JP.md [\#12](https://github.com/puppetlabs/puppetlabs-selinux_core/pull/12) ([ehom](https://github.com/ehom))
+- Expand test coverage [\#9](https://github.com/puppetlabs/puppetlabs-selinux_core/pull/9) ([joshcooper](https://github.com/joshcooper))
 
 ## [1.0.1](https://github.com/puppetlabs/puppetlabs-selinux_core/tree/1.0.1) (2018-08-17)
 
