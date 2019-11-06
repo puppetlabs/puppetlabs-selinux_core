@@ -1,6 +1,6 @@
 {
   "name": "puppetlabs-selinux_core",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "author": "puppetlabs",
   "summary": "Manage SELinux context of files",
   "license": "Apache-2.0",
