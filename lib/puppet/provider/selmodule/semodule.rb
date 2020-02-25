@@ -20,14 +20,7 @@ Puppet::Type.type(:selmodule).provide(:semodule) do
 
   def exists?
     debug "Checking for module #{@resource[:name]}"
-    execpipe("#{command(:semodule)} --list") do |out|
-      out.each_line do |line|
-        if line =~ %r{^#{@resource[:name]}\b}
-          return :true
-        end
-      end
-    end
-    nil
+    selmodules_loaded.key?(@resource[:name])
   end
 
   def syncversion
@@ -116,25 +109,47 @@ Puppet::Type.type(:selmodule).provide(:semodule) do
   end
 
   def selmodversion_loaded
-    selmod_output = []
-    selmodule_cmd = "#{command(:semodule)} --list"
-    begin
-      execpipe(selmodule_cmd) do |output|
-        output.each_line do |line|
-          line.chomp!
-          selmod_output << line
-          bits = line.split
-          if bits[0] == @resource[:name]
-            debug "load version #{bits[1]}"
-            return bits[1]
+    selmodules_loaded[@resource[:name]]
+  end
+
+  def selmodules_loaded
+    self.class.selmodules_loaded
+  end
+
+  # Extend Class
+
+  class << self
+    attr_accessor :loaded_modules
+  end
+
+  # Prefetch loaded selinux modules.
+  def self.prefetch(_resources)
+    selmodules_loaded
+  end
+
+  def self.selmodules_loaded
+    if @loaded_modules.nil?
+      debug 'Fetching loaded selinux modules'
+      modules = {}
+      selmodule_cmd = "#{command(:semodule)} --list"
+      output = []
+      begin
+        execpipe(selmodule_cmd) do |pipe|
+          pipe.each_line do |line|
+            line.chomp!
+            output << line
+            name, version = line.split
+            modules[name] = version
           end
         end
+        @loaded_modules = modules
+      rescue Puppet::ExecutionFailure
+        raise Puppet::Error,
+              _('Could not list policy modules: "%{selmodule_command}" failed with "%{selmod_output}"') %
+              { selmodule_command: selmodule_cmd, selmod_output: output.join(' ') },
+              $ERROR_INFO.backtrace
       end
-    rescue Puppet::ExecutionFailure
-      raise Puppet::ExecutionFailure,
-            _('Could not list policy modules: "%{selmodule_command}" failed with "%{selmod_output}"') %
-            { selmodule_command: selmodule_cmd, selmod_output: selmod_output.join(' ') }
     end
-    nil
+    @loaded_modules
   end
 end
