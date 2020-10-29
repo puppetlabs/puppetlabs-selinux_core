@@ -1,6 +1,13 @@
 
 # selinux_core
 
+[![Modules Status](https://github.com/puppetlabs/puppetlabs-selinux_core/workflows/[Daily]%20Unit%20Tests%20with%nightly%20Puppet%20gem/badge.svg?branch=main)](https://github.com/puppetlabs/puppetlabs-selinux_core/actions)
+[![Modules Status](https://github.com/puppetlabs/puppetlabs-selinux_core/workflows/Static%20Code%20Analysis/badge.svg?branch=main)](https://github.com/puppetlabs/puppetlabs-selinux_core/actions) 
+[![Modules Status](https://github.com/puppetlabs/puppetlabs-selinux_core/workflows/Unit%20Tests%20with%20nightly%20Puppet%20gem/badge.svg?branch=main)](https://github.com/puppetlabs/puppetlabs-selinux_core/actions) 
+[![Modules Status](https://github.com/puppetlabs/puppetlabs-selinux_core/workflows/Unit%20Tests%20with%20released%20Puppet%20gem/badge.svg?branch=main)](https://github.com/puppetlabs/puppetlabs-selinux_core/actions)
+[![Modules Status](https://github.com/puppetlabs/puppetlabs-selinux_core/workflows/Task%20Acceptance%20Tests/badge.svg?branch=main)](https://github.com/puppetlabs/puppetlabs-selinux_core/actions)
+
+
 #### Table of Contents
 
 1. [Description](#description)
