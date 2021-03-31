@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) and this project adheres to [Semantic Versioning](http://semver.org).
 
+## [1.1.0](https://github.com/puppetlabs/puppetlabs-selinux_core/tree/1.1.0) (2021-03-31)
+
+[Full Changelog](https://github.com/puppetlabs/puppetlabs-selinux_core/compare/1.0.4...1.1.0)
+
+### Added
+
+- \(MODULES-7319\) Call "semodule --list" only once. [\#23](https://github.com/puppetlabs/puppetlabs-selinux_core/pull/23) ([montaguethomas](https://github.com/montaguethomas))
+
 ## [1.0.4](https://github.com/puppetlabs/puppetlabs-selinux_core/tree/1.0.4) (2019-11-06)
 
 [Full Changelog](https://github.com/puppetlabs/puppetlabs-selinux_core/compare/1.0.3...1.0.4)
