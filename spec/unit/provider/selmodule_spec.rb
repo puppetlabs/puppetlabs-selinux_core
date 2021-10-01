@@ -1,4 +1,4 @@
-# Note: This unit test depends on having a sample SELinux policy file
+# NOTE: This unit test depends on having a sample SELinux policy file
 # in the same directory as this test called selmodule-example
 # with version 1.5.0.  The provided selmodule-example is the first
 # 256 bytes taken from /usr/share/selinux/targeted/nagios.pp on Fedora 9
@@ -33,7 +33,7 @@ describe Puppet::Type.type(:selmodule).provider(:semodule) do
       provider.class.loaded_modules = nil # Reset loaded_modules before test
       allow(provider.class).to receive(:command).with(:semodule).and_return '/usr/sbin/semodule'
       allow(provider.class).to receive(:execpipe).with('/usr/sbin/semodule --list')
-        .and_yield(StringIO.new("this is\nan error")).and_raise(Puppet::ExecutionFailure, 'it failed')
+                                                 .and_yield(StringIO.new("this is\nan error")).and_raise(Puppet::ExecutionFailure, 'it failed')
       expect { provider.selmodules_loaded }
         .to raise_error(Puppet::Error, %r{Could not list policy modules: ".*" failed with "this is an error"})
     end
@@ -63,7 +63,7 @@ describe Puppet::Type.type(:selmodule).provider(:semodule) do
       allow(provider.class).to receive(:loaded_modules).and_return loaded_modules
       allow(provider.class).to receive(:command).with(:semodule).and_return '/usr/sbin/semodule'
       allow(provider.class).to receive(:execpipe).with('/usr/sbin/semodule --list')
-        .and_yield(StringIO.new('this should not be called')).and_raise(Puppet::ExecutionFailure, 'it failed')
+                                                 .and_yield(StringIO.new('this should not be called')).and_raise(Puppet::ExecutionFailure, 'it failed')
       expect(provider.selmodules_loaded).to eq(loaded_modules)
     end
   end

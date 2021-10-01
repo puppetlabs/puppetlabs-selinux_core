@@ -1,8 +1,9 @@
 # SelBoolean type
 module Puppet
   Type.newtype(:selboolean) do
-    @doc = "Manages SELinux booleans on systems with SELinux support.  The supported booleans
-      are any of the ones found in `/selinux/booleans/`."
+    @doc = "@summary Manages SELinux booleans on systems with SELinux support.
+
+      The supported booleans are any of the ones found in `/selinux/booleans/`."
 
     newparam(:name) do
       desc 'The name of the SELinux boolean to be managed.'
