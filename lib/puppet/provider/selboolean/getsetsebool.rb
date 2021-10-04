@@ -11,9 +11,9 @@ Puppet::Type.type(:selboolean).provide(:getsetsebool) do
 
     case status
     when %r{ off$}
-      return :off
+      :off
     when %r{ on$}
-      return :on
+      :on
     else
       status.chomp!
       raise Puppet::Error, "Invalid response '#{status}' returned from getsebool"

@@ -3,9 +3,9 @@
 #
 
 Puppet::Type.newtype(:selmodule) do
-  @doc = "Manages loading and unloading of SELinux policy modules
-    on the system.  Requires SELinux support.  See man semodule(8)
-    for more information on SELinux policy modules.
+  @doc = "@summary Manages loading and unloading of SELinux policy modules on the system. Requires SELinux support.
+
+    See man semodule(8) for more information on SELinux policy modules.
 
     **Autorequires:** If Puppet is managing the file containing this SELinux
     policy module (which is either explicitly specified in the `selmodulepath`

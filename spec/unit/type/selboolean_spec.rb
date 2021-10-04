@@ -3,7 +3,7 @@ require 'spec_helper'
 describe Puppet::Type.type(:selboolean) do
   context 'when validating attributes' do
     [:name, :persistent].each do |param|
-      it "should have a #{param} parameter" do
+      it "has a #{param} parameter" do
         expect(Puppet::Type.type(:selboolean).attrtype(param)).to eq(:param)
       end
     end
@@ -26,7 +26,7 @@ describe Puppet::Type.type(:selboolean) do
     end
 
     [:on, :off, :true, :false, true, false].each do |val|
-      it "should support #{val.inspect} as a value to :value" do
+      it "supports #{val.inspect} as a value to :value" do
         Puppet::Type.type(:selboolean).new(name: 'yay', value: val)
       end
     end

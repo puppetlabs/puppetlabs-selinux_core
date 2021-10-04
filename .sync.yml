@@ -1,30 +1,19 @@
-spec/spec_helper.rb:
-    mock_with: ':rspec'
-
+.rubocop.yml:
+  default_configs:
+    Lint/Void:
+      Enabled: false
 Gemfile:
-  required:
-    ':development':
-      - gem: puppet-strings
   optional:
-    ':development':
-      - gem: 'github_changelog_generator'
-        git: 'https://github.com/skywinder/github-changelog-generator'
-        ref: '20ee04ba1234e9e83eb2ffb5056e23d641c7a018'
-        condition: "Gem::Version.new(RUBY_VERSION.dup) >= Gem::Version.new('2.2.2')"
+    ":development":
+      - gem: github_changelog_generator
 
 appveyor.yml:
   delete: true
-
 .travis.yml:
-  remove_includes:
-    - env: PUPPET_GEM_VERSION="~> 4.0" CHECK=parallel_spec
-      rvm: 2.1.9
-
-.rspec:
   delete: true
-
+.github/workflows/auto_release.yml:
+  unmanaged: false
+.github/workflows/release.yml:
+  unmanaged: false
 .gitlab-ci.yml:
   delete: true
-
-Rakefile:
-  changelog_version_tag_pattern: '%s'
