@@ -21,7 +21,7 @@ The following properties are available in the `selboolean` type.
 
 ##### `value`
 
-Valid values: `on`, `off`, ``true``, ``false``
+Valid values: `on`, `off`, `true`, `false`
 
 Whether the SELinux boolean should be enabled or disabled.
 #{value_doc}
@@ -30,26 +30,26 @@ Whether the SELinux boolean should be enabled or disabled.
 
 The following parameters are available in the `selboolean` type.
 
-* [`name`](#name)
-* [`persistent`](#persistent)
-* [`provider`](#provider)
+* [`name`](#-selboolean--name)
+* [`persistent`](#-selboolean--persistent)
+* [`provider`](#-selboolean--provider)
 
-##### <a name="name"></a>`name`
+##### <a name="-selboolean--name"></a>`name`
 
 namevar
 
 The name of the SELinux boolean to be managed.
 
-##### <a name="persistent"></a>`persistent`
+##### <a name="-selboolean--persistent"></a>`persistent`
 
-Valid values: ``true``, ``false``
+Valid values: `true`, `false`
 
 If set true, SELinux booleans will be written to disk and persist across reboots.
 The default is `false`.
 
-Default value: ``false``
+Default value: `false`
 
-##### <a name="provider"></a>`provider`
+##### <a name="-selboolean--provider"></a>`provider`
 
 The specific backend to use for this `selboolean` resource. You will seldom need to specify this --- Puppet will usually
 discover the appropriate provider for your platform.
@@ -77,7 +77,7 @@ Default value: `present`
 
 ##### `syncversion`
 
-Valid values: ``true``, ``false``
+Valid values: `true`, `false`
 
 If set to `true`, the policy will be reloaded if the
 version found in the on-disk file differs from the loaded
@@ -88,24 +88,24 @@ that will be made is if the policy is loaded at all or not.
 
 The following parameters are available in the `selmodule` type.
 
-* [`name`](#name)
-* [`provider`](#provider)
-* [`selmoduledir`](#selmoduledir)
-* [`selmodulepath`](#selmodulepath)
+* [`name`](#-selmodule--name)
+* [`provider`](#-selmodule--provider)
+* [`selmoduledir`](#-selmodule--selmoduledir)
+* [`selmodulepath`](#-selmodule--selmodulepath)
 
-##### <a name="name"></a>`name`
+##### <a name="-selmodule--name"></a>`name`
 
 namevar
 
 The name of the SELinux policy to be managed.  You should not
 include the customary trailing .pp extension.
 
-##### <a name="provider"></a>`provider`
+##### <a name="-selmodule--provider"></a>`provider`
 
 The specific backend to use for this `selmodule` resource. You will seldom need to specify this --- Puppet will usually
 discover the appropriate provider for your platform.
 
-##### <a name="selmoduledir"></a>`selmoduledir`
+##### <a name="-selmodule--selmoduledir"></a>`selmoduledir`
 
 The directory to look for the compiled pp module file in.
 Currently defaults to `/usr/share/selinux/targeted`.  If the
@@ -115,7 +115,7 @@ the module in `<selmoduledir>/<name>.pp`, where `name` is the value of the
 
 Default value: `/usr/share/selinux/targeted`
 
-##### <a name="selmodulepath"></a>`selmodulepath`
+##### <a name="-selmodule--selmodulepath"></a>`selmodulepath`
 
 The full path to the compiled .pp policy module.  You only need to use
 this if the module file is not in the `selmoduledir` directory.

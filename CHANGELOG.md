@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) and this project adheres to [Semantic Versioning](http://semver.org).
 
+## [v1.3.0](https://github.com/puppetlabs/puppetlabs-selinux_core/tree/v1.3.0) (2023-02-14)
+
+[Full Changelog](https://github.com/puppetlabs/puppetlabs-selinux_core/compare/v1.2.0...v1.3.0)
+
+### Added
+
+- \(MODULES-11371\) Updates PDK template [\#38](https://github.com/puppetlabs/puppetlabs-selinux_core/pull/38) ([mhashizume](https://github.com/mhashizume))
+
+### UNCATEGORIZED PRS; LABEL THEM ON GITHUB
+
+- \(maint\) Update codeowners [\#37](https://github.com/puppetlabs/puppetlabs-selinux_core/pull/37) ([joshcooper](https://github.com/joshcooper))
+- \(MODULES-11283\) update curl for installing latest nightly build [\#36](https://github.com/puppetlabs/puppetlabs-selinux_core/pull/36) ([AriaXLi](https://github.com/AriaXLi))
+- \(maint\) Add redirect to nightly puppet gem download [\#35](https://github.com/puppetlabs/puppetlabs-selinux_core/pull/35) ([AriaXLi](https://github.com/AriaXLi))
+- \(maint\) Github workflow now uses windows 2019 [\#34](https://github.com/puppetlabs/puppetlabs-selinux_core/pull/34) ([Dorin-Pleava](https://github.com/Dorin-Pleava))
+- \(MODULES-11183\) remove Windows from metadata [\#33](https://github.com/puppetlabs/puppetlabs-selinux_core/pull/33) ([ciprianbadescu](https://github.com/ciprianbadescu))
+
 ## [v1.2.0](https://github.com/puppetlabs/puppetlabs-selinux_core/tree/v1.2.0) (2021-10-04)
 
 [Full Changelog](https://github.com/puppetlabs/puppetlabs-selinux_core/compare/1.1.0...v1.2.0)
