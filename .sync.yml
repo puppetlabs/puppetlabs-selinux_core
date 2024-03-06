@@ -2,11 +2,6 @@
   default_configs:
     Lint/Void:
       Enabled: false
-Gemfile:
-  optional:
-    ":system_tests":
-      - gem: voxpupuli-acceptance
-
 appveyor.yml:
   delete: true
 .travis.yml:
