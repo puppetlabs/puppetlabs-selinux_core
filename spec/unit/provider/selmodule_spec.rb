@@ -7,7 +7,7 @@ require 'spec_helper'
 require 'stringio'
 
 describe Puppet::Type.type(:selmodule).provider(:semodule) do
-  let(:resource) { instance_double('resource', name: name) }
+  let(:resource) { instance_double('resource', name:) }
   let(:provider) { described_class.new(resource) }
 
   before :each do
