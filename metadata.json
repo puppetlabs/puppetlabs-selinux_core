@@ -27,6 +27,9 @@
       "operatingsystem": "Debian"
     },
     {
+      "operatingsystem": "Debian 12 ARM V7L (32 Bit)"
+    },
+    {
       "operatingsystem": "Ubuntu"
     },
     {
